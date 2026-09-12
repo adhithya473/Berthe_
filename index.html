@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BERTHE</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        BERTHE
+    </div>
+
+
+    <div class="nav-links">
+
+        <button onclick="showPage('home')">
+            Home
+        </button>
+
+        <button onclick="showPage('about')">
+            About
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section
+    id="home"
+    class="page active home-page"
+>
+
+    <div class="home-content">
+
+        <h1>
+            BERTHE
+        </h1>
+
+
+        <p class="home-subtitle">
+            find me : who me?
+        </p>
+
+
+        <button
+            class="enter-btn"
+            onclick="enterBerthe()"
+        >
+            ENTER
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GAME MENU / SECOND PAGE
+===================================================== -->
+
+<section
+    id="games"
+    class="page"
+>
+
+    <div class="game-menu">
+
+
+        <!-- TITLE -->
+
+        <h1>
+            BERTHE
+        </h1>
+
+
+
+        <!-- TWO GAMES -->
+
+        <div class="game-options">
+
+
+            <!-- =================================================
+                 SPIN
+            ================================================== -->
+
+            <button
+                class="game-card spin-option"
+                onclick="openSpin()"
+            >
+
+                <div class="spin-wrapper">
+
+
+                    <!-- WHAT YOU GET -->
+
+                    <div class="spin-top-text">
+                        WHAT YOU GET
+                    </div>
+
+
+
+                    <!-- SPIN BALL -->
+
+                    <div class="spin-ball">
+
+                        <div class="spin-center-text">
+                            SPIN
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </button>
+
+
+
+            <!-- =================================================
+                 ITH AARADA
+            ================================================== -->
+
+            <button
+                class="game-card singer-option"
+                onclick="openSinger()"
+            >
+
+                <div class="singer-box">
+
+                    <span class="singer-question">
+                        ITH AARADA?
+                    </span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BUTTERFLY TRANSITION
+===================================================== -->
+
+<div id="butterflyTransition">
+
+    <div id="flyingButterfly">
+
+        <span class="wing left-wing"></span>
+
+        <span class="body"></span>
+
+        <span class="wing right-wing"></span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE ROLL
+===================================================== -->
+
+<div id="pageRoll"></div>
+
+
+
+<!-- =====================================================
+     SPIN GAME
+===================================================== -->
+
+<section
+    id="spinGame"
+    class="page game-page"
+>
+
+
+    <button
+        class="back-btn"
+        onclick="backFromSpin()"
+    >
+        ← Back
+    </button>
+
+
+    <div class="game-content">
+
+        <h1>
+            Let's See What You Get
+        </h1>
+
+
+        <p>
+            Give it a spin.
+        </p>
+
+
+        <button
+            class="main-btn"
+            onclick="spin()"
+        >
+            SPIN
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ITH AARADA GAME
+===================================================== -->
+
+<section
+    id="singerGame"
+    class="page game-page"
+>
+
+
+    <button
+        class="back-btn"
+        onclick="backFromSinger()"
+    >
+        ← Back
+    </button>
+
+
+    <div class="singer-content">
+
+        <h1>
+            ITH AARADA?
+        </h1>
+
+
+        <p>
+            Listen carefully and find out.
+        </p>
+
+
+        <button
+            class="song-btn"
+            onclick="playSong()"
+        >
+            ▶ PLAY SONG
+        </button>
+
+
+
+        <div
+            class="singer-options hidden"
+            id="singerOptions"
+        >
+
+
+            <div
+                class="singer-card"
+                onclick="guessSinger(0)"
+            >
+
+                <img
+                    id="singerPhoto1"
+                    src=""
+                    alt="Singer 1"
+                >
+
+                <h3 id="singerName1">
+                    Singer 1
+                </h3>
+
+            </div>
+
+
+
+            <div
+                class="singer-card"
+                onclick="guessSinger(1)"
+            >
+
+                <img
+                    id="singerPhoto2"
+                    src=""
+                    alt="Singer 2"
+                >
+
+                <h3 id="singerName2">
+                    Singer 2
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <p id="singerStatus"></p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="page game-page"
+>
+
+
+    <button
+        class="back-btn"
+        onclick="showPage('home')"
+    >
+        ← Back
+    </button>
+
+
+    <div class="game-content">
+
+        <h1>
+            About BERTHE
+        </h1>
+
+
+        <p>
+            A completely unnecessary game
+            made for absolutely no reason. 😂
+        </p>
+
+
+        <p>
+            Find. Guess. Laugh.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REVEAL
+===================================================== -->
+
+<div
+    id="reveal"
+    class="reveal"
+>
+
+
+    <button
+        class="reveal-back-btn"
+        onclick="backFromReveal()"
+    >
+        ← Back
+    </button>
+
+
+    <img
+        id="funnyPhoto"
+        src=""
+        alt="Funny reveal"
+    >
+
+
+    <div
+        class="funny-message"
+        id="funnyMessage"
+    ></div>
+
+
+    <audio
+        id="laughAudio"
+    ></audio>
+
+</div>
+
+
+
+<!-- =====================================================
+     CURTAINS
+===================================================== -->
+
+<div
+    id="curtainLeft"
+    class="curtain curtain-left"
+></div>
+
+
+<div
+    id="curtainRight"
+    class="curtain curtain-right"
+></div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
